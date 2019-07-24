@@ -45,7 +45,7 @@
 # Redis数据库索引（默认为0）
 spring.redis.database=0
 # Redis服务器地址
-spring.redis.host=47.112.106.174
+spring.redis.host=秘密
 # Redis服务器连接端口
 spring.redis.port=6379
 # Redis服务器连接密码（默认为空）
@@ -641,4 +641,3 @@ public class RedisUtil {
     vim /usr/local/redis-4.0.6/redis.conf
     # 将 protected-mode yes 改为 protected-mode no （在没有密码的情况下，关闭保护模式）
     # 注释掉 bind 127.0.0.1 （取消绑定本地地址）
-    
