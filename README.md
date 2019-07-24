@@ -22,7 +22,7 @@
     cd src && make install
 
 ### 修改配置文件 redis.conf
-    将 daemonize no 修改为 daemonize yes
+    将 daemonize no 修改为 daemonize yes （后台运行）
     
 ### 指定配置文件启动
     ./redis-server /usr/local/redis-4.0.6/redis.conf
