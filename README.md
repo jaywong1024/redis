@@ -64,8 +64,8 @@ spring.redis.jedis.pool.max-active=200
 
 ### 配置类
 #### 因为 RedisAutoConfiguration 类中使用了 @ConditionalOnMissingBean(name = "redisTemplate") 注解，所以我们可以配置自己的 RedisTemplate 类，实现一些定制功能，例如：
-    - 返回的 RedisTemplate 的泛型是 <String, Object> 的，可以减少不必要的类型转换操作
-    - 设置 Key 和 Value 的序列化方式
+   - 返回的 RedisTemplate 的泛型是 <String, Object> 的，可以减少不必要的类型转换操作
+   - 设置 Key 和 Value 的序列化方式
 ```java
 @Configuration
 public class RedisConfig {
