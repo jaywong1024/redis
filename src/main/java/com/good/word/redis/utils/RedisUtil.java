@@ -518,9 +518,11 @@ public class RedisUtil {
     }
 
     /**
-     *
-     * @param key
-     * @param count
+     * 在键为 key 的 list 中删除值为 value 的元素
+     * @param key 键
+     * @param count 如果 count == 0 则删除 list 中所有值为 value 的元素
+     *              如果 count > 0 则删除 list 中最左边那个值为 value 的元素
+     *              如果 count < 0 则删除 list 中最右边那个值为 value 的元素
      * @param value
      * @return
      */

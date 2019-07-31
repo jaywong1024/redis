@@ -30,6 +30,12 @@
 ### 查看进程
     ps -aux | grep redis
     
+### 解决本地无法远程连接 Linux 上的 Redis 问题
+    vim /usr/local/redis-4.0.6/redis.conf
+    # 将 protected-mode yes 改为 protected-mode no （在没有密码的情况下，关闭保护模式）
+    # 注释掉 bind 127.0.0.1 （取消绑定本地地址）
+    
+
 ## Spring Boot 整合 Redis
 
 ### 引入依赖
@@ -619,9 +625,11 @@ public class RedisUtil {
     }
 
     /**
-     *
-     * @param key
-     * @param count
+     * 在键为 key 的 list 中删除值为 value 的元素
+     * @param key 键
+     * @param count 如果 count == 0 则删除 list 中所有值为 value 的元素
+     *              如果 count > 0 则删除 list 中最左边那个值为 value 的元素
+     *              如果 count < 0 则删除 list 中最右边那个值为 value 的元素
      * @param value
      * @return
      */
@@ -636,8 +644,3 @@ public class RedisUtil {
 
 }
 ```
-
-### 解决本地无法远程连接 Linux 上的 Redis 问题
-    vim /usr/local/redis-4.0.6/redis.conf
-    # 将 protected-mode yes 改为 protected-mode no （在没有密码的情况下，关闭保护模式）
-    # 注释掉 bind 127.0.0.1 （取消绑定本地地址）
