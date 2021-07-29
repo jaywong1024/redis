@@ -36,6 +36,26 @@
     # 将 protected-mode yes 改为 protected-mode no （在没有密码的情况下，关闭保护模式）
     # 注释掉 bind 127.0.0.1 （取消绑定本地地址）
     
+## 利用 Docker 安装 Redis
+
+### 拉取镜像
+    #默认拉取最新版本
+    $ docker pull redis
+    $ docker pull redis:latest
+    #拉取指定版本
+    $ docker pull redis:6.2.5
+    
+### 查看镜像
+    $ docker images
+    
+### 运行容器
+    $ docker run -itd --name redis-test -p 6379:6379 redis
+    
+### 查看进程
+    $ docker ps
+    
+### 进入控制台
+    $ docker exec -it redis-test /bin/bash
 
 ## Spring Boot 整合 Redis
 
