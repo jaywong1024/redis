@@ -56,6 +56,10 @@
     
 ### 进入控制台
     $ docker exec -it redis-test /bin/bash
+    
+## 本地客户端推荐
+
+https://github.com/qishibo/AnotherRedisDesktopManager/releases
 
 ## Spring Boot 整合 Redis
 
